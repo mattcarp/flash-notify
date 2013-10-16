@@ -1,3 +1,10 @@
+/*
+    Flashes
+    version 0.1.0
+    10/16/2013
+    https://github.com/mattcarp/flashes
+*/
+
 Flashes = {
   // client-only collection
   collection: new Meteor.Collection(null),
