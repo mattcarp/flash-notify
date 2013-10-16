@@ -38,4 +38,8 @@ The call can be made anyhere in your client-side code, and takes a 'message' and
 
     Flashes.setFlash(message [,type] [,channel]) 
 
-Both the "type" and "channel" argumenst are options.  If not specified, the type will be set as "info", and the channel will be "inline".  If you're using bootstrap, these defaults will give you the standard blue 'info' message, with a close box, wherever you put the `{{> flashesList}}` template.
+Both the "type" and "channel" argumenst are options.  If not specified, the type will be set as "info", and the channel will be "inline".  If you're using bootstrap, these defaults will give you the standard blue 'info' message, with a close box, wherever you put the `{{> flashesList}}` template.  Y
+
+**Styling**
+
+You can use any `type` you want, and style it in your CSS.  The template 
