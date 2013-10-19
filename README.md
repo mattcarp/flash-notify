@@ -7,20 +7,13 @@ A meteor package for sending messages to the user.  Uses a client-side collectio
 
 ***Setup***
 
-You can get Flashes running with three lines of code.
+You can get Flashes running with two lines of code.
 
 *1. Template*
 
-In you appliction's overall layout, include the `{{> flashesList}}` template.
-
-*2. Router*
-
-You'll just need to tell your router to clear messages after they've been seen.  In iron-router:
-
-	after: function() {
-		Flashes.clearSeen();
-		// ...
-*3. Call it!*
+In your appliction's overall layout, include the `{{> flashesList}}` template.
+		
+*2. Call it!*
 
 Try it in the browser console:
 
@@ -32,14 +25,32 @@ Change the style:
     
 Change the display method:
 
-	Flashes.setFlash("You got a flash message!", "success", "popover");
+	Flashes.setFlash("You got a flash message!", "success", "gritter");
 
 The call can be made anyhere in your client-side code, and takes a 'message' and two optional arguments:
 
-    Flashes.setFlash(message [,type] [,channel]) 
+    Flashes.setFlash(message [, options]) 
 
-Both the "type" and "channel" argumenst are options.  If not specified, the type will be set as "info", and the channel will be "inline".  If you're using bootstrap, these defaults will give you the standard blue 'info' message, with a close box, wherever you put the `{{> flashesList}}` template.  Y
+There are several options specified in the `options` object.  The most commonl of these are 'type', and 'channel', like this:
+
+	Flashes.setFlash(message, {type: 'danger', channel: 'jquery-growl');
+
+If not specified, the type will be set as "info", and the channel will be "inline".  If you're using bootstrap, these defaults will give you the standard blue 'info' message, with a close box, wherever you put the `{{> flashesList}}` template.
 
 **Styling**
 
-You can use any `type` you want, and style it in your CSS.  The template 
+Flashes work well with Boostrap, but it's not a requirement.  You can call Flashes with any `type` you want, and add custom styling for your `type`.  The template uses the class `.alert` for generic styling of all flash messages, and `alert-myType` for specific `type`s.  So, if you call Flashes with `Flashes.setFlash('my message', 'myGroovyType')`, you woul style the message in your CSS like this:
+
+    .alert {
+    	width: 100%;
+    	/* more generic styling */
+    }
+    .alert-myGroovyType {
+    	background-color: gray;
+    	/* more type-specific styling */
+    }
+
+
+**Credits**
+
+Inspired by the `errors` helper in [the Microscope app](https://github.com/DiscoverMeteor/Microscope).

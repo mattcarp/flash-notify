@@ -12,7 +12,7 @@ Tinytest.add("Flashes collection works", function(test) {
 });
 
 Tinytest.addAsync("Flashes template works", function(test, done) {
-  Flashes.setFlash('A new error!');
+  Flashes.setFlash("A message for you!");
   test.equal(Flashes.collection.find({seen: false}).count(), 1);
 
   // render the template
