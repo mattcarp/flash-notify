@@ -7,20 +7,23 @@
 </template>
 
 <template name="flash">
-  <div class="alert alert-dismissable flash-message {{options.cssClass}}">
+  <div class="alert alert-dismissable flash-message {{#if options.image}}has-image{{/if}} {{options.cssClass}}">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     {{#if options.image}}
-      <div class="thumbnail flash-thumbnail pull-left">
-        <img src="{{options.image}}"/>
-      </div>
+    <div class="thumbnail flash-thumbnail pull-left">
+      <img src="{{options.image}}"/>
+    </div>
     {{/if}}
-  <div>
+    <div>
+      {{#if options.title}}
       <div class="pull-left" >
-        {{#if options.title}}<strong>{{options.title}}</strong>{{/if}}
+        <strong>{{options.title}}</strong>
       </div>
       <br>
-      <div class="pull-left">
+      {{/if}}
+      <div {{#if options.image}}class="pull-left"{{/if}}>
         <p>{{message}}</p>
       </div>
+    </div>
   </div>
 </template>
