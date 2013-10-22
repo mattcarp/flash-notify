@@ -1,0 +1,13 @@
+.flash-thumbnail {
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.flash-title {
+  margin-bottom: 10px;
+}
+
+.flash-message {
+  min-height: 100px;
+}

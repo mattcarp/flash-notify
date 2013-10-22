@@ -1,8 +1,8 @@
 {
-  "name": "flashes",
-  "description": "a means of sending flash messages to the user",
-  "homepage": "https://github.com/mattcarp/flashes",
-  "author": "Matt Carpenter <matt@mattcarpenter.com>",
+  "name": "flash-notify",
+  "description": "for sending flash messages and persistent notifications to the user",
+  "homepage": "https://github.com/mattcarp/flash-notify",
+  "author": "Matt Carpenter (https://github.com/mattarp)",
   "version": "0.1.0",
   "git": "https://github.com/mattcarp/flashes",
   "packages": {

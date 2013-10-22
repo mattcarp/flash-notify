@@ -7,43 +7,20 @@
 </template>
 
 <template name="flash">
-
-  <div class="alert alert-dismissable alert-flashes {{options.cssClass}}">
+  <div class="alert alert-dismissable flash-message {{options.cssClass}}">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    {{#if options.title}}<h3>{{options.title}}</h3>{{/if}}
     {{#if options.image}}
-      <div class="col-sm-3 col-md-2">
-          <img class="thumbnail" src={{options.image}} alt="image">
+      <div class="thumbnail flash-thumbnail pull-left">
+        <img src="{{options.image}}"/>
       </div>
     {{/if}}
-    {{message}} <br>
-
-
-
-
-
+  <div>
+      <div class="pull-left" >
+        {{#if options.title}}<strong>{{options.title}}</strong>{{/if}}
+      </div>
+      <br>
+      <div class="pull-left">
+        <p>{{message}}</p>
+      </div>
   </div>
-
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modal title</h4>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-
-
 </template>

@@ -1,0 +1,39 @@
+<template name="notifications">
+<li class="dropdown hidden-xs">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-warning-sign"></i>
+          <span class="badge">{{notificationCount}}</span>
+    </a>
+    <ul class="dropdown-menu notifications">
+        <li class="dropdown-menu-title">
+            <span>{{notificationCount}} {{ sessionVar "chosenApp" }} notifications</span>
+        </li>  
+        {{#if notificationCount}}
+          {{#each notifications}}
+            {{> notification}}
+          {{/each}}
+        {{else}}
+          <li class="warning">
+            <a href="">
+              <span class="icon red"><i class="icon-user"></i></span>
+              <span class="message">no notifications</span>
+            </a>
+          </li>
+        {{/if}}
+        <li class="dropdown-menu-sub-footer">
+          <a>view all notifications</a>
+        </li>  
+      </ul>
+    </li>
+</template>
+
+
+<template name="notification">
+  <li class="flash-notification">
+    <a class="flash-notification" href="{{postPagePath postId}}">
+      <span class="icon red"><i class="icon-user"></i></span>
+      <strong>{{message}}</strong>
+      <span class="time">x</span> 
+    </a>
+  </li>
+</template>
