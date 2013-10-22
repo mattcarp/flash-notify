@@ -1,5 +1,5 @@
 Package.describe({
-    summary: "for sending flash messages and persistent notifications to the user"
+    summary: "Sends flash messages and persistent notifications to the user"
 });
 
 Package.on_use(function (api, where) {
@@ -7,15 +7,10 @@ Package.on_use(function (api, where) {
       'minimongo',
       'mongo-livedata',
       'templating',
+      'underscore',
       'handlebars'
       ], 'client'
       );
-
-
-    api.add_files([
-      'lib/flash_notify_server.js'
-      ], 'server'
-    );
 
     api.add_files([
       'lib/flash_notify_client.js',
@@ -35,6 +30,11 @@ Package.on_use(function (api, where) {
       ], ['server', 'client']
     );
 
+    api.add_files([
+      'lib/flash_notify_server.js'
+      ], 'server'
+    );
+
 
     if (api.export)
       api.export('FlashNotify');
@@ -44,5 +44,5 @@ Package.on_test(function(api) {
   api.use('flash-notify', 'client');
   api.use(['tinytest', 'test-helpers'], 'client');
 
-  api.add_files('flash-notify_tests.js', 'client');
+  api.add_files('flash_notify_tests.js', 'client');
 });
