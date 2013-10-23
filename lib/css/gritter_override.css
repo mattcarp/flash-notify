@@ -1,0 +1,27 @@
+/* flash-notify override to make girrty work when packaged */
+.gritter-item-wrapper {
+  background:url('/packages/flash-notify/lib/images/ie-spacer.gif'); /* ie7/8 fix */ 
+}
+
+.gritter-top {
+  background:url(/packages/flash-notify/lib/images/gritter.png) no-repeat left -30px;
+}
+
+.gritter-bottom {
+  background:url(/packages/flash-notify/lib/images/gritter.png) no-repeat left bottom;
+}
+
+.gritter-item {
+  background:url(/packages/flash-notify/lib/images/gritter.png) no-repeat left -40px;
+}
+
+.gritter-close {
+  background:url(/packages/flash-notify/lib/images/gritter.png) no-repeat left top;
+}
+
+.gritter-light .gritter-item,
+.gritter-light .gritter-bottom,
+.gritter-light .gritter-top,
+.gritter-light .gritter-close {
+    background-image: url(/packages/flash-notify/lib/images/gritter-light.png);
+}

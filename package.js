@@ -21,6 +21,8 @@ Package.on_use(function (api, where) {
       'lib/css/flash_notify.css',
       'lib/gritter.min.js',
       'lib/images/gritter.png',
+      'lib/images/gritter-light.png',
+      'lib/images/ie-spacer.gif',
       'lib/css/gritter.css'
       ], 'client'
     );
@@ -34,6 +36,9 @@ Package.on_use(function (api, where) {
       'lib/flash_notify_server.js'
       ], 'server'
     );
+
+    // need to override gritter image location - this css loads last
+    api.add_files(['lib/css/gritter_override.css'], 'client');
 
 
     if (api.export)

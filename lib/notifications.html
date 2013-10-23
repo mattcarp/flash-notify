@@ -6,12 +6,12 @@
     </a>
     <ul class="dropdown-menu notifications">
         {{#if notificationCount}}
-        <li><span>click message to close</span></li>
+        <li class="disabled"><a href=""><span>click message to close</span></a></li>
           {{#each notifications}}
             {{> notification}}
           {{/each}}
         {{else}}
-          <li class="warning">
+          <li class="disabled">
             <a href="">
               <span class="icon red"><i class="icon-user"></i></span>
               <span class="message">no notifications</span>
@@ -24,8 +24,8 @@
 
 
 <template name="notification">
-  <li class="flash-notification">
-    <a class="flash-notification" href="{{postPagePath postId}}">
+  <li class="flash-notification-item">
+    <a class="flash-notification-link" href="">
       <span class="icon red"><i class="icon-user"></i></span>
       <strong>{{message}}</strong>
     </a>
