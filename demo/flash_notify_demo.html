@@ -1,0 +1,95 @@
+<head>
+  <title>flash-notify</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="">
+      <h2>Flash-Notify Examples</h2>
+
+      <div class="col-md-12">
+        {{> flashesList}}
+      </div>
+      {{> flashDemo}}
+      <div class="pull-right"><span>{{> notifications}}</div>
+      {{> notificationsDemo}}
+    </div>
+  </div>
+</body>
+
+<template name="flashDemo">
+  <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">flash messages</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-6">
+            <button class="btn btn-primary inline">Inline Flash - defaults</button>
+            <br><br>
+            <pre>FlashNotify.setFlash(
+              "Just thought you'd want to know..."
+              );</pre>
+          <hr>
+          <button class="btn btn-primary inline-title-image">Inline Flash - sticky, with title and image</button>
+          <br><br>
+            <pre>FlashNotify.setFlash(
+              "I have an image and a title, and I'm sticky.",
+              {
+                title: "My Title!",
+                sticky: true,
+                image: "html5.png"
+              });</pre>
+          </div>
+
+          <div class="col-md-6">
+            <button class="btn btn-primary growl">Growl Flash - defaults (uses Gritter)</button>
+            <br><br>
+            <pre> FlashNotify.setFlash(
+              "I am growling at you.  Grrrrr.", 
+              {
+                channel: "gritter",
+                image: "html5.png",
+                cssClass: "alert-danger"
+              });</pre>
+            <hr>
+            <button class="btn btn-primary growl-image-position">Growl Flash - with position and image settings (uses Gritter)</button>
+            <pre> FlashNotify.setFlash(
+              "I am growling, I've got an image, and I'm on the bottom left.",
+              {
+                channel: "gritter",
+                image: "html5.png",
+                position: "bottom-left"
+              });</pre>
+            </div>
+        </div>
+  </div>
+</template>
+
+<template name="notificationsDemo">
+  <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">notifications (see dropdown menu <span class="glyphicon glyphicon-arrow-right"></span>)</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Unlike flash messages, notifications are saved in the database.</p>
+          <div class="col-md-6">
+            <button class="btn btn-primary create-notice">Create Notification</button>
+            <br><br>
+            <pre>FlashNotify.createNotification(
+              "You've been notified!");
+            </pre>
+          </div>
+
+          <div class="col-md-6">
+            <p>Coming soon:</p>
+            <ul>
+              <li>System-wide and user-specific notification options</li>
+              <li>Global configuration of dropdown menu name</li>
+            </ul>
+          </div>
+
+        </div>
+  </div>
+</template>
